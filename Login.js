@@ -24,18 +24,16 @@ function maskDate(event) {
     }
 }
 
-function maskCPF(event) {
-    let input = event.target;
-    let value = input.value;
-    
-    if (!/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(value)) {
-        value = value.replace(/\D/g, ""); 
-        if (value.length > 3) value = value.replace(/(\d{3})(\d)/, "$1.$2");
-        if (value.length > 6) value = value.replace(/(\d{3})\.(\d{3})(\d)/, "$1.$2.$3");
-        if (value.length > 9) value = value.replace(/(\d{3})\.(\d{3})\.(\d{3})(\d)/, "$1.$2.$3-$4");
-        input.value = value;
-    }
+function mascaraCPF(cpfInput) {
+    let cpf = cpfInput.value.replace(/\D/g, ''); 
+    cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+    cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+    cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    cpfInput.value = cpf;
 }
+
+document.getElementById('date').addEventListener('input', maskDate);
+document.getElementById('cpf').addEventListener('input', maskCPF);
 
 document.getElementById('date').addEventListener('input', maskDate);
 document.getElementById('cpf').addEventListener('input', maskCPF);
