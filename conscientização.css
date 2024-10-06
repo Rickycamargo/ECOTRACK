@@ -1,0 +1,397 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:eght@300;400;500;600;700&display=swap);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+}
+body{
+   background-color: black;
+}
+section,
+footer{
+    padding: 54px 0;
+}
+h3{
+    font-size: 50px;
+}
+p{
+    color: white;
+}
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+.btn{
+    background-color: #4f9cf9;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.1s; 
+}
+.btn.animate-btn{
+    animation: animate-outline 1s ease-out infinite;
+}
+.btn:hover{
+    background-color: #3580db;
+}
+
+@keyframes animate-outline{
+    from{
+        outline: 0px solid #4f9bf98a;
+    }
+    to{
+        outline: 15px solid #4f9bf900;
+    }
+}
+.navegation {
+    background-color: transparent; /* ou a cor desejada */
+    padding-top: 30px; /* ajuste conforme necessário */
+    z-index: 1000; /* para garantir que esteja acima de outros elementos */
+}
+
+header{
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+}
+nav ul a{
+    color: white; 
+    margin: 0 25px;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: block;
+    text-decoration: none;
+}
+nav ul a:not(.btn):after{
+    content: "";
+    background-color: #4f9cf9;
+    height: 3px;
+    width: 0%;
+    display: block;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+nav ul a:hover::after{
+    width: 100%;
+}
+.banner{
+    display: flex;
+    justify-content: center;
+
+}
+.banner .banner-text{
+    margin: 150px;
+    text-align: center;
+    padding: 0 90px;
+}
+.banner .banner-text h1{
+    font-size: 96px;
+    color: white;
+}
+.banner .banner-text p{
+    font-size: 20px;
+    color: #ffffffb7;
+    font-weight: lighter;
+    margin: 18px 0;
+}
+
+.faca-mais .container{
+    display: flex;
+    align-items: center;
+}
+.faca-mais .faca-mais-text{
+    width: 50%;
+    padding: 0 40px;
+}
+.faca-mais .faca-mais-text h3{
+    font-size: 56px;
+    color: rgb(188, 180, 180);
+}
+.sobre .sobre-text h3{
+    color: rgb(188, 180, 180);
+}
+.faca-mais .faca-mais-text p{
+    margin: 5px 0 10px 0;
+}
+.faca-mais .faca-mais-img{
+    width: 50%;
+}
+.faca-mais .faca-mais-img img{
+    width: 100%;
+}
+.footer{
+    background-color: #4f9cf9;
+    text-align: center;
+}
+.footer i{
+    color: #4f9cf9;
+    font-size: 19px;
+    background-color: white;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 10px;
+}
+.footer p{
+    margin-top: 10px;
+    color: white;
+}
+/* Pagina cons*/
+.sobre .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+.sobre .sobre-text{
+    width: 50%;
+    padding-right: 40px;
+}
+.sobre .sobre-text p{
+    margin: 18px 0;
+    color: white;
+}
+.sobre .sobre-img{
+    width: 50%;
+}
+.sobre .sobre-img img{
+    width: 100%;
+    border-radius: 7px;
+}
+/* FIm pagina cons*/
+
+/* Paragrafo 1 */
+
+.p1{
+    margin: 40px;
+    padding: 40px;
+    margin-top: -25px;
+}
+
+/* video make */ 
+
+section.makes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    margin-bottom: 60px;
+}
+
+section.makes h2 {
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    padding-bottom: 30px;
+}
+
+section.makes div.makes-container {
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* Adiciona espaçamento entre as colunas */
+}
+
+section.makes div.col {
+    flex: 1 1 300px; /* Define uma largura mínima para as colunas */
+    max-width: 300px; /* Define uma largura máxima */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Adiciona um efeito de zoom no hover */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Garante que a imagem se ajuste corretamente ao card */
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #333;
+}
+
+.p2{
+    margin: 40px;
+    padding: 40px;
+    margin-top: -25px;
+}
+
+/*Botao mapa  */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+}
+
+.map-info {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* Estilizando Filtros */
+#filters {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#filters label {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+#filters input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Estilizando o botão de filtros */
+.filter-button {
+    background-color: #007BFF; /* Azul */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Mão ao passar o mouse */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s, transform 0.2s; /* Animações */
+    margin-bottom: 10px; /* Espaçamento abaixo do botão */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.filter-button:hover {
+    background-color: #0056b3; /* Azul escuro ao passar o mouse */
+}
+
+/* Efeito ao clicar no botão */
+.filter-button:active {
+    transform: scale(0.95); /* Diminui o tamanho ao clicar */
+}
+
+/* Adicione este estilo para o carrossel */
+#carouselExampleCaptions {
+    max-width: 800px; /* Ajuste para a largura desejada */
+    margin: 0 auto; /* Centraliza o carrossel */
+}
+
+/* Seu estilo existente */
+#map {
+    height: 500px;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilização para os botões de filtro */
+.filter-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.filter-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.filter-container input {
+    margin-right: 10px;
+}
+
+/* Apresentação do mapa */
+.map-info {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Confi Carrosel */
+
+html {
+    scroll-behavior: smooth; /* Adiciona rolagem suave */
+}
+
+/* Estilos adicionais */
+#map {
+    height: 500px;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#carouselExampleCaptions {
+    max-width: 800px; /* Ajuste para a largura desejada */
+    margin: 0 auto; /* Centraliza o carrossel */
+    padding-bottom: 40px;
+}
+
+.p3{
+    margin: 40px;
+    padding: 40px;
+    margin-top: -25px;
+}
+.map-info h2{
+    color: rgb(188, 180, 180);
+}
+.navegation .LogoEco{
+    width: 65%;
+}
