@@ -1,5 +1,7 @@
 const passwordInput = document.getElementById('new-password');
 const confirmPasswordInput = document.getElementById('confirm-password');
+const emailInput = document.getElementById('email');
+const tokenInput = document.getElementById('token');
 const passwordStrengthBar = document.querySelector('.password-strength-bar');
 const form = document.getElementById('password-reset-form');
 
@@ -27,14 +29,23 @@ function updatePasswordStrength() {
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
+
+  // Validações
+  if (!emailInput.value || !tokenInput.value || !passwordInput.value || !confirmPasswordInput.value) {
+    alert('Por favor, preencha todos os campos.');
+    return;
+  }
+
   if (passwordInput.value !== confirmPasswordInput.value) {
     alert('As senhas não coincidem. Por favor, tente novamente.');
     return;
   }
+  
   if (passwordInput.value.length < 8) {
     alert('A senha deve ter pelo menos 8 caracteres.');
     return;
   }
+  
   alert('Senha redefinida com sucesso!');
 });
 
