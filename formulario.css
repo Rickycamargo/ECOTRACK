@@ -218,11 +218,23 @@ nav a:not(.btn):not(:has(img)):hover::after {
     display: block;
   }
   
-  .footer {
-    background-color: #0f0f0f;
-    text-align: center;
-    padding: 60px 0; 
-    color: white;
+  .footer{
+    background-color: #4f9cf9;
+    text-align: center; 
 }
+.footer i{
+    color: #4f9cf9;
+    font-size: 19px;
+    background-color: white;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 10px;
+}
+.footer p{
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+}
+
 
   
