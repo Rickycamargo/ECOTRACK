@@ -451,9 +451,9 @@ nav a:not(.btn):not(:has(img)):hover::after {
 }
 
 .footer {
-    background-color: #0f0f0f;
+    background-color:#4f9cf9;
     text-align: center;
-    padding: 20px 0; 
+    padding: 40px 0; 
     color: white;
 }
 
@@ -483,3 +483,4 @@ nav a:not(.btn):not(:has(img)):hover::after {
     display: block;
     position: relative;
 }
+
