@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function() {
     AOS.init({
       duration: 1000, // Tempo de duração da animação em milissegundos
