@@ -28,6 +28,8 @@ document.getElementById('recovery-form').addEventListener('submit', async functi
   } catch (error) {
       // Erro na requisição
       document.getElementById('response-message').innerText = "Ocorreu um erro. Tente novamente.";
+      console.error('Erro ao enviar e-mail: ', error.message);
+      alert('Erro no servidor.');
   }
 });
   

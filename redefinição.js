@@ -7,6 +7,65 @@ const form = document.getElementById('password-reset-form');
 
 passwordInput.addEventListener('input', updatePasswordStrength);
 
+document.getElementById('password-reset-form').addEventListener('submit', async (event) => {
+  event.preventDefault(); // Evita o comportamento padrão do formulário
+
+  // Obtenha os valores dos campos do formulário
+  const email = document.getElementById('email').value;
+  const token = document.getElementById('token').value;
+  const newPassword = document.getElementById('new-password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+
+  // Verifique se as senhas coincidem
+  if (newPassword !== confirmPassword) {
+      alert('As senhas não coincidem!');
+      return;
+  }
+  
+  if (!email || !token || !newPassword || !confirmPassword) {
+    alert('Por favor, preencha todos os campos.');
+    return;
+  }
+  
+  if (newPassword.length < 8) {
+    alert('A senha deve ter pelo menos 8 caracteres.');
+    return;
+  }
+  
+
+  // Crie o objeto para enviar ao backend
+  const resetPasswordData = {
+      email: email,
+      token: token,
+      senha: newPassword,
+      confirmarSenha: confirmPassword
+  };
+
+  try {
+      // Envie a requisição para o backend
+      const response = await fetch('http://localhost:5268/auth/reset-password', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(resetPasswordData)
+      });
+
+      // Verifique a resposta do servidor
+      if (response.ok) {
+          alert('Senha redefinida com sucesso!');
+          // Redirecionar ou limpar o formulário
+      } else {
+          const errorData = await response.json();
+          alert('Erro ao redefinir a senha: ' + (errorData.message ));
+      }
+  } catch (error) { 
+      console.error('Erro ao redefinir senha:', error.message);
+      alert('Erro ao redefinir senha, tente novamente mais tarde.');
+  }
+});
+
+
 function updatePasswordStrength() {
   const password = passwordInput.value;
   let strength = 0;
@@ -26,28 +85,6 @@ function updatePasswordStrength() {
     passwordStrengthBar.style.backgroundColor = '#00cc00';
   }
 }
-
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  // Validações
-  if (!emailInput.value || !tokenInput.value || !passwordInput.value || !confirmPasswordInput.value) {
-    alert('Por favor, preencha todos os campos.');
-    return;
-  }
-
-  if (passwordInput.value !== confirmPasswordInput.value) {
-    alert('As senhas não coincidem. Por favor, tente novamente.');
-    return;
-  }
-  
-  if (passwordInput.value.length < 8) {
-    alert('A senha deve ter pelo menos 8 caracteres.');
-    return;
-  }
-  
-  alert('Senha redefinida com sucesso!');
-});
 
 const logo = document.querySelector('.logo img');
 logo.addEventListener('mouseover', function() {
