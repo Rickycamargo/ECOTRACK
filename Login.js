@@ -3,19 +3,18 @@ var btnSignup = document.querySelector("#signup");
 
 var body = document.querySelector("body");
 
-
 btnSignin.addEventListener("click", function () {
    body.className = "sign-in-js"; 
 });
 
 btnSignup.addEventListener("click", function () {
     body.className = "sign-up-js";
-})
+});
 
 document.getElementById('submitSignup').addEventListener('click', async (event) => {
     event.preventDefault();
 
-    // Captura os dados do formulário
+    // Captura os dados do formulário de cadastro
     const nome = document.querySelector('input[placeholder="Nome"]').value;
     const cpf = document.querySelector('input[placeholder="CPF"]').value;
     const email = document.querySelector('input[placeholder="Email"]').value;
@@ -85,6 +84,9 @@ document.getElementById('submitSignin').addEventListener('click', async (event) 
             console.log('Token JWT: ', result.Token);
             // Armazena o token no localStorage
             localStorage.setItem('jwtToken', result.token);
+
+            // Redireciona para formulario.html
+            window.location.href = 'formulario.html';
         } else {
             alert('Erro ao fazer login. Verifique suas credenciais.');
         }
